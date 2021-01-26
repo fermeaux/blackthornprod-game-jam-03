@@ -32,7 +32,7 @@ public class Wave
     }
 }
 
-[CreateAssetMenu(menuName = "ScriptableObjects/Waves")]
+[CreateAssetMenu(menuName = "Datas/Waves")]
 public class WaveSO : ScriptableObject
 {
     public List<Wave> waves;

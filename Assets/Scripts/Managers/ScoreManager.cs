@@ -68,7 +68,7 @@ public class ScoreManager : MonoBehaviour
     private void OnDestroy()
     {
         PlayerPrefs.SetInt("lastScore", score);
-        if (score > PlayerPrefs.GetInt("highScore"))
+        if (score > PlayerPrefs.GetInt("highScore", 0))
         {
             PlayerPrefs.SetInt("highScore", score);
         }

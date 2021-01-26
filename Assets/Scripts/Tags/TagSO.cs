@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+[CreateAssetMenu(menuName = "Datas/Tag")]
+public class TagSO : ScriptableObject
 {
 }

@@ -12,24 +12,30 @@ public enum PlayerState
 
 public class PlayerStateManager : MonoBehaviour
 {
-    public PlayerState state = PlayerState.NORMAL;
     public UnityEvent<PlayerState> onStateChanged;
 
-    public void ChangeState(PlayerState newState)
+    private List<PlayerState> stateApplied = new List<PlayerState>();
+
+    public PlayerState GetState()
     {
-        state = newState;
-        onStateChanged?.Invoke(state);
+        if (stateApplied.Contains(PlayerState.INVINCIBLE)) return PlayerState.INVINCIBLE;
+        if (stateApplied.Contains(PlayerState.PUSHED)) return PlayerState.PUSHED;
+        return PlayerState.NORMAL;
     }
 
     public void ChangeStateTemporaly(PlayerState newState, float duration)
     {
-        ChangeState(newState);
-        StartCoroutine(WaitResetState(duration));
+        var beforeState = GetState();
+        if (newState != PlayerState.INVINCIBLE && beforeState == PlayerState.INVINCIBLE) return;
+        stateApplied.Add(newState);
+        var afterState = GetState();
+        if (beforeState != afterState) onStateChanged?.Invoke(afterState);
+        StartCoroutine(WaitRemoveState(duration, newState));
     }
 
-    private IEnumerator WaitResetState(float duration)
+    private IEnumerator WaitRemoveState(float duration, PlayerState state)
     {
         yield return new WaitForSeconds(duration);
-        ChangeState(PlayerState.NORMAL);
+        stateApplied.Remove(state);
     }
 }

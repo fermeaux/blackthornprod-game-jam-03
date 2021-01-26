@@ -20,7 +20,9 @@ public class PlayerCollision : MonoBehaviour
         var penguin = collision.gameObject.GetComponent<PenguinMovement>();
         if (penguin != null)
         {
-            if (stateManager.state == PlayerState.INVINCIBLE)
+            var tags = collision.gameObject.GetComponent<Tags>();
+            var isBonus = tags != null && tags.Contains("bonus");
+            if (stateManager.GetState() == PlayerState.INVINCIBLE && !isBonus)
             {
                 Destroy(penguin.gameObject);
                 onPenguinKilled?.Invoke();

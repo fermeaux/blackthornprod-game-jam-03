@@ -15,17 +15,9 @@ MonoBehaviour:
   waves:
   - spawnFrequencyMinMax: {x: 0.1, y: 0.2}
     probabilities:
-    - probability: 90
+    - probability: 80
       item: {fileID: 7495909700484791041, guid: 247d17c050016f2459bbaf554d7e709e, type: 3}
-    - probability: 9
+    - probability: 10
       item: {fileID: 5768000716259044363, guid: a5bad40662259d149bb797185d2511d6, type: 3}
-    - probability: 1
-      item: {fileID: 6982195645517572134, guid: 76ec060f26a287a4884a19d980be1392, type: 3}
-  - spawnFrequencyMinMax: {x: 0.1, y: 0.2}
-    probabilities:
-    - probability: 75
-      item: {fileID: 7495909700484791041, guid: 247d17c050016f2459bbaf554d7e709e, type: 3}
-    - probability: 24
-      item: {fileID: 5768000716259044363, guid: a5bad40662259d149bb797185d2511d6, type: 3}
-    - probability: 1
+    - probability: 10
       item: {fileID: 6982195645517572134, guid: 76ec060f26a287a4884a19d980be1392, type: 3}
