@@ -12,9 +12,8 @@ public enum PlayerState
 
 public class PlayerStateManager : MonoBehaviour
 {
-    public UnityEvent<PlayerState> onStateChanged;
-
     private List<PlayerState> stateApplied = new List<PlayerState>();
+
 
     public PlayerState GetState()
     {
@@ -28,8 +27,6 @@ public class PlayerStateManager : MonoBehaviour
         var beforeState = GetState();
         if (newState != PlayerState.INVINCIBLE && beforeState == PlayerState.INVINCIBLE) return;
         stateApplied.Add(newState);
-        var afterState = GetState();
-        if (beforeState != afterState) onStateChanged?.Invoke(afterState);
         StartCoroutine(WaitRemoveState(duration, newState));
     }
 

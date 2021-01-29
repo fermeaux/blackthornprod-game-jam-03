@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1525767517337884204}
   - component: {fileID: 1525767517337884205}
   - component: {fileID: 4038282179185039112}
+  - component: {fileID: -768910949082161069}
   m_Layer: 0
   m_Name: Kamikaze
   m_TagString: Untagged
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 1074207713
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
-  m_Color: {r: 1, g: 0.109803915, b: 0.13622347, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b043ed3d46bf9f9488f627d5d8f66de7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -148,3 +149,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3b86f77e96dee1478096e742a732fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-768910949082161069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5768000716259044363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d932cc18bdf6f647b40d8117de5c032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionsFx:
+  - {fileID: 2896880288495713245, guid: b250935f26bd2b643b47a393a3735a66, type: 3}

@@ -12,6 +12,7 @@ public class GoldenPenguin : MonoBehaviour
         if (player != null)
         {
             player.ChangeStateTemporaly(PlayerState.INVINCIBLE, invincibleDuration);
+            GoldenTimeUpdater.instance.Replay();
             Destroy(gameObject);
         }
     }

@@ -9,6 +9,7 @@ public class ScoreManager : MonoBehaviour
     public int combo = 1;
     public int comboFrequency = 5;
     public int penguinKilledScore = 5;
+    public Animator comboAnimator;
     public UnityEvent<int> scoreChanged;
     public UnityEvent<int> comboChanged;
 
@@ -35,6 +36,7 @@ public class ScoreManager : MonoBehaviour
     {
         combo = newValue;
         comboChanged?.Invoke(combo);
+        comboAnimator.Play(combo == 1 ? "loose" : "gain");
     }
 
     private void Awake()

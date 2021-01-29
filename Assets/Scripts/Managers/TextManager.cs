@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour
 {
+    public string prefix;
     private Text text;
 
     private void Awake()
@@ -14,6 +15,6 @@ public class TextManager : MonoBehaviour
 
     public void SetText(int value)
     {
-        text.text = $"{value}";
+        text.text = $"{prefix}{value}";
     }
 }
